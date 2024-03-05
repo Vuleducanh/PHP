@@ -1,0 +1,128 @@
+*{
+    font-family: Roboto;
+}
+
+#content_cart{
+    height: 1000px;
+    background-color: white;
+    display: flex;
+    margin-top: 94px;
+}
+
+.column_product{
+    flex: 2;
+    background-color: rgb(139, 136, 136);
+    border: 2px solid white;
+}
+
+.column_funtion{
+    flex: 1;
+    background-color: rgb(139, 136, 136);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#product_cart{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(198, 198, 195);
+    border-radius: 2px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.parallel{
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.display_color_cart{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: black;
+}
+
+.vertical_column{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    height: 100%;
+}
+
+.last{
+    margin-left: auto;
+}
+
+.checkbox_product{
+    width: 25px;
+    height: 25px;
+    margin-left: 30px;
+}
+
+.infor_product_cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.total_price_product_cart{
+    font-size: 23px;
+    color: orange;
+    margin-top: 20px;
+}
+
+.btn_buy_cart{
+    width: 350px;
+    height: 35px;
+    border-radius: 5px;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn_delete_cart{
+    width: 350px;
+    height: 35px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.all_price_cart{
+    margin-top: 100px;
+}
+
+.input_quanty{
+    width: 60px;
+    font-size: 16px;
+}
+
+#infor_price_product_cart{
+    display: flex;
+    flex-direction: column;
+    margin-left: 90px;
+}
+
+#function{
+    display: flex;
+    flex-direction: column;
+    margin-left: 90px;
+}
+
+.delete_product_cart,
+.edit_product_cart{
+    width: 150px;
+    height: 28px;
+    border-radius: 5px;
+    
+}
+
+.delete_product_cart{
+    margin-bottom: 20px;
+}

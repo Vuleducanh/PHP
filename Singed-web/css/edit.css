@@ -1,0 +1,46 @@
+#input_add_product{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title_edit{
+    margin: 20px 0px 20px 50px;
+    font-family: Roboto;
+}
+
+label{
+    font-family: Roboto;
+}
+
+#name_edit,
+#quanty_edit,
+#price_edit,
+#describe_edit,
+#style_edit,
+#category_edit{
+    font-size: 15px;
+    padding: 3px;
+}
+
+#name_edit,
+#price_edit,
+
+#style_edit,
+#category_edit{
+    width: 20%;
+}
+
+#quanty_edit{
+    width: 10%;
+}
+
+#describe_edit{
+    width: 70%;
+}
+
+#submit_edit{
+    width: 30%;
+    height: 30px;
+    border-radius: 3px;
+}

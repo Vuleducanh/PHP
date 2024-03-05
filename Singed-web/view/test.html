@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color List</title>
+	<style type="text/css">
+		.color-option {
+			display: none;
+		}
+		.color-circle {
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		.color-circle.black {
+			background-color: black;
+		}
+		.color-circle.white {
+			background-color: white;
+			border: 1px solid black;
+		}
+		.color-circle.red {
+			background-color: red;
+		}
+		.color-circle.yellow {
+			background-color: yellow;
+		}
+		.color-circle.green {
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<h2>Select a color:</h2>
+	<div class="color-circle black"></div>
+	<div class="color-option">
+		<ul>
+			<li><a href="#">Black</a></li>
+			<li><a href="#">Dark Gray</a></li>
+			<li><a href="#">Light Gray</a></li>
+		</ul>
+	</div>
+	<div class="color-circle white"></div>
+	<div class="color-option">
+		<ul>
+			<li><a href="#">White</a></li>
+			<li><a href="#">Ivory</a></li>
+			<li><a href="#">Beige</a></li>
+		</ul>
+	</div>
+	<div class="color-circle red"></div>
+	<div class="color-option">
+		<ul>
+			<li><a href="#">Red</a></li>
+			<li><a href="#">Crimson</a></li>
+			<li><a href="#">Maroon</a></li>
+		</ul>
+	</div>
+	<div class="color-circle yellow"></div>
+	<div class="color-option">
+		<ul>
+			<li><a href="#">Yellow</a></li>
+			<li><a href="#">Lemon</a></li>
+			<li><a href="#">Gold</a></li>
+		</ul>
+	</div>
+	<div class="color-circle green"></div>
+	<div class="color-option">
+		<ul>
+			<li><a href="#">Green</a></li>
+			<li><a href="#">Olive</a></li>
+			<li><a href="#">Lime</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var colorCircles = document.querySelectorAll('.color-circle');
+		for (var i = 0; i < colorCircles.length; i++) {
+			colorCircles[i].addEventListener('click', function(){
+				var options = this.nextElementSibling;
+				if (options.style.display === 'block') {
+					options.style.display = 'none';
+				} else {
+					options.style.display = 'block';
+				}
+			});
+		}
+	</script>
+</body>
+</html>

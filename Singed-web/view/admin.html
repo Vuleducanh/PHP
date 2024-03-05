@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet"  href="../css/header.css">
+        <link rel="stylesheet"  href="../css/admin.css">
+        <link rel="stylesheet"  href="../css/footer.css">
+
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <title>SINGED-SHOP</title>
+    </head>
+
+    <body>
+        <div id="home-admin">
+            <div id="menu">
+                <div id="intro-admin">
+                    <div id="row-intro">
+                        <h1 id="title-admin">Admin</h1>
+                        <img id="icon" src="<c:url value='/static/img/iconsinged.webp' />">
+                    </div>
+                    <h3 id="hello-admin" >Chào  </h3>
+                </div>
+        
+                <div id="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div id="div-list-menu">
+                    <ul class="menu">
+                        <li><i class="fa-solid fa-house-lock icon-list-menu"></i></i> <a
+                            href="#">Home</a></li>
+                        <li><i class="fa-solid fa-chart-line icon-list-menu"></i> <a
+                            href="#">Dashboard</a></li>
+                        <li><i class="fa-solid fa-file icon-list-menu"></i> <a
+                            href="./trang-chu">Pages</a></li>
+                        <li><i class="fa-solid fa-file-invoice icon-list-menu"></i> <a
+                            href="#">Duyệt đơn</a></li>
+                        <li><i class="fa-solid fa-gear icon-list-menu"></i> <a
+                            href="#">Config</a></li>
+                        <li><i class="fa-solid fa-gear icon-list-menu"></i> <a
+                            href="/spring-mvc/logout">Đăng xuất</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div id="content">
+                <div id="header-content">
+                    <i class="fa-solid fa-bars"></i>
+                    <ul class="tab-list-product">
+                        <li><a>Tất cả sản phẩm</a></li>
+                        <li><a>Áo</a></li>
+                        <li><a>Quần</a></li>
+                        <li><a>Phụ kiện</a></li>
+                    </ul>
+                    <div class="container-list-product"></div>
+                    <i class="fa-solid fa-sort-down"></i> <i class="fa-solid fa-user"></i>
+                </div>
+    
+                <div id="func">
+                    <button id="add">Thêm</button>
+                    <button id="delete">Xóa</button>
+                    <button id="edit">Sửa</button>
+                </div>
+                <div id="div-table">
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th class="id">ID</th>
+                                <th class="name">Tên</th>
+                                <th class="img">Hình ảnh</th>
+                                <th class="quantity">Số lượng</th>
+                                <th class="price">Giá</th>
+                                <th class="old-price">Giá cũ</th>
+                                <th class="style1">Phong cách</th>
+                                <th class="type">Loại</th>
+                                <th class="describe">Mô tả</th>
+                                <th class="purchases">Lượt mua</th>
+                                <th class="date">Ngày tạo</th>
+                                <th class="edit"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1 <input type="checkbox"></a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>  
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1 <input type="checkbox"><input type="checkbox"></a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1 <input type="checkbox"><input type="checkbox"></a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="id-product"><a class="input-cell" type="text">1</a></td>
+                                <td><a class="input-cell" type="text">Product 1</a></td>
+                                <td><img src="product1.jpg" alt="Product 1"></td>
+                                <td><a class="input-cell" type="text">100</a></td>
+                                <td><a class="input-cell" type="text">$10</a></td>
+                                <td><a class="input-cell" type="text">$8</a></td>
+                                <td><a class="input-cell" type="text">Brand</a></td>
+                                <td><a class="input-cell" type="text">Type 1</a></td>
+                                <td><textarea class="input-cell" id="describe_edit" name="describe" rows="4" cols="50" >Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất , Chất lượng như cái cc, màu thì xuất, gà , ngu như con heo , tôi là best yasuo, fqwfqwfqwfqfqfqfqf</textarea></td>
+                                <td><a class="input-cell" type="text">13</a></td>
+                                <td><input class="input-cell" type="text" value="13/2/2023"></td>
+                                <td><button class="input-cell"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                    
+    
+    
+                            <!-- Thêm các dòng khác tương tự cho các sản phẩm khác -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

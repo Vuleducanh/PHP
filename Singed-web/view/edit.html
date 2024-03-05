@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet"  href="../css/header.css">
+        <link rel="stylesheet"  href="../css/edit.css">
+        <link rel="stylesheet"  href="../css/admin.css">
+        <link rel="stylesheet"  href="../css/footer.css">
+
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <title>SINGED-SHOP</title>
+    </head>
+
+    <body>
+        <div id="home-admin">
+            <div id="menu">
+                <div id="intro-admin">
+                    <div id="row-intro">
+                        <h1 id="title-admin">Admin</h1>
+                        <img id="icon" src="<c:url value='/static/img/iconsinged.webp' />">
+                    </div>
+                    <h3 id="hello-admin" >Chào  </h3>
+                </div>
+        
+                <div id="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div id="div-list-menu">
+                    <ul class="menu">
+                        <li><i class="fa-solid fa-house-lock icon-list-menu"></i></i> <a
+                            href="#">Home</a></li>
+                        <li><i class="fa-solid fa-chart-line icon-list-menu"></i> <a
+                            href="#">Dashboard</a></li>
+                        <li><i class="fa-solid fa-file icon-list-menu"></i> <a
+                            href="./trang-chu">Pages</a></li>
+                        <li><i class="fa-solid fa-file-invoice icon-list-menu"></i> <a
+                            href="#">Duyệt đơn</a></li>
+                        <li><i class="fa-solid fa-gear icon-list-menu"></i> <a
+                            href="#">Config</a></li>
+                        <li><i class="fa-solid fa-gear icon-list-menu"></i> <a
+                            href="/spring-mvc/logout">Đăng xuất</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+    <div id="content">
+        <h1 class="title_edit">Thông tin sản phẩm</h1>
+        <form id="input_add_product">
+            <label for="ten">Tên sản phẩm:</label>
+            <input type="text" id="name_edit" name="ten" required><br>
+
+            <label for="soluong">Số lượng:</label>
+            <input type="text" id="quanty_edit" name="soluong" required><br>
+            
+            <div class="div_img_edit">
+                <label class="" for="form-field-1">Ảnh:</label>
+                <div class="img_edit">
+                    <input type="file" class="" id="thumbnail" name="thumbnail"/>
+                </div>
+             </div><br>
+
+            <label for="gia">Giá:</label>
+            <input type="text" id="price_edit" name="gia" required><br>
+
+            <label for="mota">Mô tả:</label><br>
+            <textarea id="describe_edit" name="describe" rows="4" cols="50"></textarea><br>
+
+            <label for="phongcach">Phong cách:</label>
+            <select id="style_edit" name="phongcach">
+                <option value="phongcach1">Tối giản</option>
+                <option value="phongcach2">Công sở</option>
+                <option value="phongcach3">Thể thao</option>
+                <option value="phongcach4">Đường phó</option>
+                <option value="phongcach5">Du mục</option>
+            </select><br>
+            
+            <label for="loai">Loại:</label>
+            <select id="category_edit" name="theloai">
+                <option value="loai1">Áo</option>
+                <option value="loai2">Quần</option>
+                <option value="loai3">Phụ kiện</option>
+            </select>
+
+            <br><br>
+
+            <input type="submit" value="Submit" id="submit_edit">
+        </form>
+        </div>
+    </div>
+    </body>
+</html>
