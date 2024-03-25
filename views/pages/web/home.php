@@ -18,48 +18,27 @@
                 </div>       
                 
                 <h1 id="best_selling">Top bán chạy</h1>
+
                 <div id="list_product">
-                    <div class="product">
-                        <div class="img_product"></div>
-                        <div class="infor_product">
-                            <a class="name_product">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price">300.000đ</a>
-                                <a class="old_price">450.000đ</a>
+                    <?php for($i = 1; $i <= 4; $i++ ):
+                        $product = $dataBestSaleProduct['bestSaleProduct'][$i] ?>
+                        <div class="product">   
+                            <a href="">
+                                <div class="img_product" style="background-image: url(./assets/product/<?php echo $product->getImage(); ?>" alt="<?php echo $product->getNameProduct(); ?>)"> </div>
+                            </a>
+                            <div class="infor_product">
+                                <!-- Tên sản phẩm -->
+                                <a class="name_product"><?php echo $product->getNameProduct(); ?></a>
+                                <div class="div_price">
+                                    <!-- Giá sản phẩm -->
+                                    <a class="price"><?php echo number_format($product->getPrice()); ?>đ</a>
+                                    <!-- Giá cũ -->
+                                    <a class="old_price"><?php echo number_format($product->getOldPrice()); ?>đ</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product">
-                        <div class="img_product"></div>
-                        <div class="infor_product">
-                            <a class="name_product">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price">300.000đ</a>
-                                <a class="old_price">450.000đ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="img_product"></div>
-                        <div class="infor_product">
-                            <a class="name_product">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price">300.000đ</a>
-                                <a class="old_price">450.000đ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="img_product"></div>
-                        <div class="infor_product">
-                            <a class="name_product">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price">300.000đ</a>
-                                <a class="old_price">450.000đ</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>  
+                    <?php endfor; ?>
+                </div>
 
                 <button id="btn_seeall">Xem tất cả</button>
             </div>
@@ -86,92 +65,27 @@
             <div id="content_100">
                 <div id="div_new">
                     <h1 id="title_newproduct">Sản phẩm mới</h1>
-                    <img id="icon_new" class="new" src="../img/new.png">
+                    <img id="icon_new" class="new" src="./assets/img/new.png">
                     <h2 id="sub_newproduct" class="new">New</h2>
                 </div>
 
                 <div id="list_product1">
-
+                    <?php for($i = 1; $i <= 8; $i++ ):
+                        $product = $dataNewProduct['newProduct'][$i] ?>
                     <div class="product1">
-                        <div class="img_product1"></div>
+                        <a href="">
+							<div class="img_product1" style="background-image: url(./assets/product/<?php echo $product->getImage(); ?>" alt="<?php echo $product->getNameProduct(); ?>)"> </div>
+                        </a>
                         <div class="infor_product1">
-                            <a class="name_product1">Hoodie</a>
+                            <a class="name_product1"><?php echo $product->getNameProduct(); ?></a>
                             <div class="div_price">
-                                <a class="price1">300.000đ</a>
-                                <a class="old_price1">450.000đ</a>
+                                <a class="price1"><?php echo number_format($product->getPrice()); ?>đ</a>
+                                <a class="old_price1"><?php echo number_format($product->getOldPrice()); ?>đ</a>
                             </div>
                         </div>
                     </div>
-                    <div class="product1">
-                        <div class="img_product1"></div>
-                        <div class="infor_product1">
-                            <a class="name_product1">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price1">300.000đ</a>
-                                <a class="old_price1">450.000đ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product1">
-                        <div class="img_product1"></div>
-                        <div class="infor_product1">
-                            <a class="name_product1">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price1">300.000đ</a>
-                                <a class="old_price1">450.000đ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product1">
-                        <div class="img_product1"></div>
-                        <div class="infor_product1">
-                            <a class="name_product1">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price1">300.000đ</a>
-                                <a class="old_price1">450.000đ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product1">
-                        <div class="img_product1"></div>
-                        <div class="infor_product1">
-                            <a class="name_product1">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price1">300.000đ</a>
-                                <a class="old_price1">450.000đ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product1">
-                        <div class="img_product1"></div>
-                        <div class="infor_product1">
-                            <a class="name_product1">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price1">300.000đ</a>
-                                <a class="old_price1">450.000đ</a>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="product1">
-                        <div class="img_product1"></div>
-                        <div class="infor_product1">
-                            <a class="name_product1">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price1">300.000đ</a>
-                                <a class="old_price1">450.000đ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product1">
-                        <div class="img_product1"></div>
-                        <div class="infor_product1">
-                            <a class="name_product1">Hoodie Basic</a>
-                            <div class="div_price">
-                                <a class="price1">300.000đ</a>
-                                <a class="old_price1">450.000đ</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endfor; ?>
                 </div>
+
                 <button id="btn_seeall1">Xem tất cả</button>
             </div>

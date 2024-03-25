@@ -12,6 +12,11 @@
   top: 0;
 }
 
+.style a {
+  text-decoration: none; /* Bỏ gạch dưới */
+  color: inherit; /* Sử dụng màu chữ mặc định của phần tử cha */
+}
+
 #header {
     background-color: white;
     top : 0 ;       left: 0;        right: 0;

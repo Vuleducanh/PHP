@@ -5,11 +5,10 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
             <title>SINGED-SHOP</title>
-            <?php if (isset($css_files)): ?>
-                <?php foreach ($css_files as $css_file): ?>
+    
+                <?php foreach ($data['css_files'] as $css_file): ?>
                     <link rel="stylesheet" href="<?= $css_file ?>">
                 <?php endforeach; ?>
-            <?php endif; ?>
     </head>
 
     <body>
@@ -18,17 +17,18 @@
                 <div id="header">
                     <img id ="img_web" src="./assets/img/singed.png"> 
                     <ul id="navigation">
-                        <li> <a href="index.html" >TRANG CHỦ</a></li>
+                        <li> <a href="http://localhost:8008/PHP/index.php?controller=pages&action=home" >TRANG CHỦ </a></li>
                         <li> <a>PHONG CÁCH</a> <a class="ti-angle-down" id="css_ti_angle_down"></a> 
-                            <ul class="style">
-                                <li> <a>Đơn giản</a></li>
-                                <li> <a>Lịch sự</a></li>
-                                <li> <a>Trưởng thành</a></li>
-                                <li> <a>Trẻ trung</a></li>
-                                <li> <a>Năng động</a></li>
-                            </ul>
+
+                        <ul class="style">
+                            <?php foreach ($dataStyle['style'] as $style): ?>
+                                <li> <a href=""><?php echo $style->getNameStyle(); ?></a></li>
+                            <?php endforeach; ?>
+                        </ul>
+
+                            
                         </li>
-                        <li> <a href="sale.html">KHUYẾN MÃI</a></li>
+                        <li> <a href="http://localhost:8008/PHP/index.php?controller=sale&action=sale&page=1">KHUYẾN MÃI</a></li>
                         <li> <a>LIÊN HỆ</a></li>
                         </ul>   
                         <div class="search-container">
@@ -145,10 +145,12 @@
                     <h3 id="title_address">Địa chỉ : Trụ sở chính/ 273 An Dương Vương – Phường 3 – Quận 5</h3>
                 </div>
             </div>
+
         <?php if (isset($js_files)): ?>
-            <?php foreach ($js_files as $js_file): ?>
+            <?php foreach ($data['js_files'] as $js_file): ?>
                 <script src="<?= $js_file ?>"></script>
             <?php endforeach; ?>
         <?php endif; ?>
+        
     </body>
 </html>

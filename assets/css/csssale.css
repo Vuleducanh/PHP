@@ -1,9 +1,14 @@
 #content{
     position: relative;
     background: rgba(0, 0, 0, 0.86);
-    height: 2300px;
+    height: 1900px;
     text-align: center;
     margin-top: 94px;
+}
+
+a {
+  text-decoration: none; /* Bỏ gạch dưới */
+  color: inherit; /* Sử dụng màu chữ mặc định của phần tử cha */
 }
 
 #div_slider_sale{
@@ -57,93 +62,118 @@
 }
 
 
-#list_product_sale{
-    width: 100%;
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+#list_product_sale {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.product{
-    margin: 0 45px;
-    height: 404px;
-    display: inline-block;
+.product {
+  margin: 0 45px;
+  height: 404px;
+  width: 15%;
+  margin-top: 20px;
 }
 
-.img_product{
-    background-image: url(../img/img_sale.jfif);
-    background-size: cover;
-    width: 233px;
-    height: 350px;
-    border: 2px solid #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.img_product {
+  background-size: 100% 100%;
+  height: 350px;
+  border: 2px solid #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  border-radius: 5px 5px 0px 0px;
 }
 
-.infor_product{
-    width: 100%;
-    height: 50px;
-    background: rgba(217, 217, 217, 0.18);
-    border : 1px solid  #FFFFFF;
-    border-top: none;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .name_product{
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 550;
-    font-size: 16px;
-    line-height: 18px;
-    color: #FFFFFF;
-    margin: 2px 0px 0px 2px;
-  }
-  
-  .div_price{
-    display: flex;
-  }
-  
-  .price{
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 18px;
-    color: #FD6F08; 
-    align-self: flex-end;
-    margin-right: 3px;
-  }
-  
-  .old_price{
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 18px;
-    color: rgba(255, 255, 255, 0.45);
-    margin-top: auto;
-    margin-left: 2px;
-    text-decoration: line-through;
-  }
+.infor_product {
+  width: 100%;
+  height: 55px;
+  background: rgba(217, 217, 217, 0.18);
+  border: 1px solid #FFFFFF;
+  border-top: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 
-  .product:nth-child(n+5) {
-    margin-top: 40px;
-  }
+.name_product {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 550;
+  font-size: 15px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin: 2px 0px 0px 2px;
+  text-align: left;
+}
 
+.div_price {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
 
-  #btn_seeall1{
-    width: 180px;
-    height: 38px; 
-    background-color: white;
-    border-radius: 6px;
-    margin-top: 70px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 21px;
-    color: black;
+.price {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #FD6F08;
+  margin-right: 5px;
+}
+
+.old_price {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-right: 2px;
+  text-decoration-line: line-through;
+}
+
+#btn_seeall1 {
+  width: 180px;
+  height: 38px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  margin-top: 45px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 21px;
+  color: #000000;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.active {
+  background-color: #1a94f1 !important; /* Màu nền */
+  color: #000000; /* Màu chữ */
+  font-weight: bold; /* Trọng số chữ */
+  border-radius: 4px; /* Bo tròn viền */
+  padding: 4px 8px; /* Khoảng cách bên trong */
+  margin: 10px;
+}
+
+#pagination{
+  display: block;
+  width: 200px;
+  margin-top: 50px;
+  padding: 10px;
+  background-color: #00000000;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#not-click{
+  background-color: #e8e7e7;
+  padding: 10px;
+  border-radius: 4px;
 }
