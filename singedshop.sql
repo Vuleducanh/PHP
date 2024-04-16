@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 25, 2024 lúc 04:47 PM
+-- Thời gian đã tạo: Th4 16, 2024 lúc 07:30 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -288,8 +288,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`idUser`, `fullName`, `phone`, `password`, `email`, `status`, `gender`, `age`, `address`) VALUES
-(34, 'Huynh Minh Quan', '0703200286', '$2a$10$UqC6jgS2fUa1DqFmiWwNY.HpgiCVMeqvdeHErwmcCHOED5k5IJoRC', NULL, 1, NULL, NULL, NULL),
-(35, 'Singed', '113', '$2a$10$OAQkfITrq7zOA5khUhp9IuBQtj/ez.q2Dm68BD3cmO91cjmykquSu', 'huynhminhquan07072002@gmail.com', 1, 'Nam', 22, '83/1b ấp tây lân bà điểm');
+(38, 'Huỳnh Minh Quân', '0703200286', '$2y$10$.OgzQq/QhXrSLQ49p2bGYe8MbhMEKILmz8jq7PE1Ed6PE3hE6ghMa', NULL, NULL, NULL, NULL, NULL),
+(39, 'Tom cat', '123', '$2y$10$UQKBWCJXTQWzQd8pRwYBXOh4o5t8B37cGvmDTLsGXrsMbZydBJ2e.', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -307,8 +307,8 @@ CREATE TABLE `user_role` (
 --
 
 INSERT INTO `user_role` (`idUser`, `idRole`) VALUES
-(34, 1),
-(35, 2);
+(38, 1),
+(39, 2);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -417,7 +417,7 @@ ALTER TABLE `style`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
