@@ -23,13 +23,13 @@
                     <?php for($i = 1; $i <= 4; $i++ ):
                         $product = $dataBestSaleProduct['bestSaleProduct'][$i] ?>
                         <div class="product">   
-                            <a href="">
+                        <a href="http://localhost:8008/PHP/index.php?controller=product&action=product&idProduct=<?php echo $product->getIdProduct(); ?>&idStyle=<?php echo $product->getIdStyle();?>">
                                 <div class="img_product" style="background-image: url(./assets/product/<?php echo $product->getImage(); ?>" alt="<?php echo $product->getNameProduct(); ?>)"> </div>
                             </a>
                             <div class="infor_product">
                                 <!-- Tên sản phẩm -->
                                 <a class="name_product"><?php echo $product->getNameProduct(); ?></a>
-                                <div class="div_price">
+                                <div class="div_price"> 
                                     <!-- Giá sản phẩm -->
                                     <a class="price"><?php echo number_format($product->getPrice()); ?>đ</a>
                                     <!-- Giá cũ -->
@@ -73,7 +73,7 @@
                     <?php for($i = 1; $i <= 8; $i++ ):
                         $product = $dataNewProduct['newProduct'][$i] ?>
                     <div class="product1">
-                        <a href="">
+                    <a href="http://localhost:8008/PHP/index.php?controller=product&action=product&idProduct=<?php echo $product->getIdProduct(); ?>&idStyle=<?php echo $product->getIdStyle();?>">
 							<div class="img_product1" style="background-image: url(./assets/product/<?php echo $product->getImage(); ?>" alt="<?php echo $product->getNameProduct(); ?>)"> </div>
                         </a>
                         <div class="infor_product1">

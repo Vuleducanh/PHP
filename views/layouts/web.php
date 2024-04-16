@@ -15,14 +15,14 @@
 
             <div id="main-head">
                 <div id="header">
-                    <img id ="img_web" src="./assets/img/singed.png"> 
+                    <a href="http://localhost:8008/PHP/index.php?controller=pages&action=home"><img id ="img_web" src="./assets/img/singed.png"></a>
                     <ul id="navigation">
                         <li> <a href="http://localhost:8008/PHP/index.php?controller=pages&action=home" >TRANG CHỦ </a></li>
                         <li> <a>PHONG CÁCH</a> <a class="ti-angle-down" id="css_ti_angle_down"></a> 
 
                         <ul class="style">
                             <?php foreach ($dataStyle['style'] as $style): ?>
-                                <li> <a href=""><?php echo $style->getNameStyle(); ?></a></li>
+                                <li> <a href="http://localhost:8008/PHP/index.php?controller=style&action=style&idStyle=<?php echo $style->getIdStyle();?>"><?php echo $style->getNameStyle(); ?></a></li>
                             <?php endforeach; ?>
                         </ul>
 
@@ -39,10 +39,22 @@
                         <div id="div_iconfunction">    
                             <i class="fa-solid fa-user icon_funtion profile">
                                 <ul class="profile_container">
-                                    <li><a href="login.html">Thông tin</a></li>
-                                    <li><a href="">Đơn hàng của tôi</a></li>
-                                    <li><a>Giỏ hàng</a></li>
-                                    <li><a>Đăng xuất</a></li>
+                               <?php
+                                    // Kiểm tra xem đã tồn tại $_SESSION['user_id'] hay chưa
+                                    if (isset($_SESSION['user_id'])) {
+                                        // Nếu đã đăng nhập, hiển thị liên kết đến trang thông tin 
+                                        if($_SESSION['role'] == 1 ) {
+                                            echo '<li><a href="http://localhost:8008/PHP/index.php?controller=admin&action=admin">Quản lý kho *</a></li>';
+                                        }
+                                        echo '<li><a href="http://localhost:8008/PHP/index.php?controller=profile&action=profile">Thông tin</a></li>';
+                                        echo '<li><a href="http://localhost:8008/PHP/index.php?controller=login&action=logout">Đơn hàng của tôi</a></li>';
+                                        echo '<li><a href="http://localhost:8008/PHP/index.php?controller=login&action=logout">Giỏ hàng</a></li>';
+                                        echo '<li><a href="http://localhost:8008/PHP/index.php?controller=login&action=logout">Đăng xuất</a></li>';
+                                    } else {
+                                        // Nếu chưa đăng nhập, hiển thị liên kết đến trang đăng nhập
+                                        echo '<li><a href="http://localhost:8008/PHP/index.php?controller=login&action=login">Đăng nhập</a></li>';
+                                    }
+                                ?>
                                 </ul>
                             </i>
                             <i class="fa-solid fa-cart-shopping icon_funtion" title="2"></i>

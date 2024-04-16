@@ -1,7 +1,12 @@
 <?php
 $controllers = array(
   'pages' => ['home', 'error'],
-  'sale' => ['sale']
+  'sale' => ['sale','error'],
+  'style' => ['style','error'],
+  'product' => ['product','error'],
+  'login' => ['login','loginAuthentication','logout','error'],
+  'register' => ['register','registerAccountUser','error'],
+  'admin' => ['admin','error'],
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
 // Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi

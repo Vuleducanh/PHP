@@ -1,4 +1,4 @@
-<body>
+
         <div id="content">
             <div id="div_slider_sale"></div>
             <div id="logo_slider_sale"></div>
@@ -13,9 +13,9 @@
             <div id="list_product_sale">
                 <?php foreach ($dataSale['sale'] as $product): ?>
                 <div class="product">
-                        <a href="">
-                                <div class="img_product" style="background-image: url(./assets/product/<?php echo $product->getImage(); ?>" alt="<?php echo $product->getNameProduct(); ?>)"> </div>
-                        </a>
+                    <a href="http://localhost:8008/PHP/index.php?controller=product&action=product&idProduct=<?php echo $product->getIdProduct(); ?>&idStyle=<?php echo $product->getIdStyle();?>">
+                            <div class="img_product" style="background-image: url(./assets/product/<?php echo $product->getImage(); ?>" alt="<?php echo $product->getNameProduct(); ?>)"> </div>
+                    </a>
                     <div class="infor_product">
                         <a class="name_product"><?php echo $product->getNameProduct(); ?></a>
                         <div class="div_price">
@@ -26,14 +26,14 @@
                 </div>
                 <?php endforeach; ?>
             </div>  
-            <button id="btn_seeall1">Xem tất cả</button>
 
-            <div id="pagination">
-                <?php for ($i = 1; $i <= $totalPageSale; $i++): ?>
-                    <a id="not-click" href="http://localhost:8008/PHP/index.php?controller=sale&action=sale&page=<?php echo $i; ?>" <?php if ($i == $currentPage) echo 'class="active"'; ?>><?php echo $i; ?></a>
+            <div class="pagination">
+                <a href="<?php echo ($currentPage > 1) ? 'http://localhost:8008/PHP/index.php?controller=sale&action=sale&page=' . ($currentPage - 1) : '#'; ?>">&laquo;</a>
+                <?php for ($i = 1; $i <= $totalPage; $i++): ?>
+                    <a href="http://localhost:8008/PHP/index.php?controller=sale&action=sale&page=<?php echo $i; ?>" <?php if ($i == $currentPage) echo 'class="active"'; ?>><?php echo $i; ?></a>
                 <?php endfor; ?>
+                <a href="<?php echo ($currentPage < $totalPage) ? 'http://localhost:8008/PHP/index.php?controller=sale&action=sale&page=' . ($currentPage + 1) : '#'; ?>">&raquo;</a>
             </div>
+
+
         </div>
-
-
-    </body>

@@ -137,43 +137,29 @@ a {
   text-decoration-line: line-through;
 }
 
-#btn_seeall1 {
-  width: 180px;
-  height: 38px;
-  background: #FFFFFF;
-  border-radius: 6px;
-  margin-top: 45px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 21px;
-  color: #000000;
-  margin-left: auto;
-  margin-right: auto;
+
+/*CSS phân trang*/
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+	padding-bottom: 50px;
 }
 
-.active {
-  background-color: #1a94f1 !important; /* Màu nền */
-  color: #000000; /* Màu chữ */
-  font-weight: bold; /* Trọng số chữ */
-  border-radius: 4px; /* Bo tròn viền */
-  padding: 4px 8px; /* Khoảng cách bên trong */
-  margin: 10px;
+.pagination a {
+	color: rgb(255, 255, 255);
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
 }
 
-#pagination{
-  display: block;
-  width: 200px;
-  margin-top: 50px;
-  padding: 10px;
-  background-color: #00000000;
-  margin-left: auto;
-  margin-right: auto;
+.pagination a.active {
+	background-color: #4CAF50;
+	color: white;
 }
 
-#not-click{
-  background-color: #e8e7e7;
-  padding: 10px;
-  border-radius: 4px;
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
 }
