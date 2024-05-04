@@ -1,9 +1,10 @@
 #content{
     position: relative;
     background: rgba(0, 0, 0, 0.86);
-    height: 1900px;
     text-align: center;
     margin-top: 94px;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -16,7 +17,6 @@ a {
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 94px;
     border: 3px solid #FFFAFA;
     border-top: none;
     height: 550px;

@@ -1,4 +1,5 @@
 <?php
+// Kết nối db
 class DB
 {
     private static $instance = NULl;

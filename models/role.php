@@ -49,6 +49,18 @@ class role {
         $stmt->execute([$idUser, $idRole]);
         return true;
     }
+
+    public static function updateRole($idUser, $newRoleId)
+    {
+        $db = DB::getInstance();
+        
+        // Thực hiện câu truy vấn để cập nhật vai trò cho người dùng
+        $sql = "UPDATE user_role SET idRole = $newRoleId WHERE idUser = $idUser";
+        $db->query($sql);
+        
+        return true;
+    }
+    
 }
 
 ?>

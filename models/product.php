@@ -11,10 +11,10 @@ class product {
     private $image;
     private $purchase; // lượt mua
     private $idCategory;
-    private $dateCreate;
+    private $createDate;
 
 
-    public function __construct($idProduct, $nameProduct, $quantity, $price, $oldPrice, $describe, $idStyle, $image, $purchase, $idCategory) {
+    public function __construct($idProduct, $nameProduct, $quantity, $price, $oldPrice, $describe, $idStyle, $image, $purchase, $idCategory, $createDate) {
         $this->idProduct = $idProduct;
         $this->nameProduct = $nameProduct;
         $this->quantity = $quantity;
@@ -25,6 +25,7 @@ class product {
         $this->image = $image;
         $this->purchase = $purchase;
         $this->idCategory = $idCategory;
+        $this->createDate= $createDate;
     }
 
     public function getIdProduct() {
@@ -103,16 +104,16 @@ class product {
         return $this->idCategory;
     }
 
-    public function setCategory($idCategory) {
+    public function setidCategory($idCategory) {
         $this->idCategory = $idCategory;
     }
 
-    public function getDateCreate() {
-        return $this->dateCreate;
+    public function getCreateDate() {
+        return $this->createDate;
     }
 
-    public function setDateCreate($dateCreate) {
-        $this->dateCreate = $dateCreate;
+    public function setCreateDate($createDate) {
+        $this->createDate = $createDate;
     }
 
 
@@ -120,7 +121,7 @@ class product {
     public static function getDetailProduct($idProduct)
     {
         $db = DB::getInstance();
-        $sql = "SELECT idProduct, nameProduct, price, oldPrice, image,purchases ,  quantity, `describe`, idCategory, idStyle FROM Product WHERE idProduct = " . $idProduct;
+        $sql = "SELECT idProduct, nameProduct, price, oldPrice, image,purchases ,  quantity, `describe`, idCategory, idStyle, `CreatedDate` FROM Product WHERE idProduct = " . $idProduct;
         $req = $db->query($sql);
     
         $item = $req->fetch(); // Sử dụng fetch() để chỉ trả về một dòng dữ liệu
@@ -138,7 +139,8 @@ class product {
                 $item['idStyle'],
                 $item['image'],
                 $item['purchases'],
-                $item['idCategory']
+                $item['idCategory'],
+                $item['CreatedDate']
             );
         } else {
             return null; // Trả về null nếu không tìm thấy sản phẩm
@@ -166,29 +168,81 @@ class product {
         return $list;
     }
 
-
-    /*
-    	public List<LittleInforProductDTO> getProductCategory(int idStyle) {
-		
-		String sql = "USE SingedShop;\r\n"
-				+ "SELECT  idProduct ,nameProduct, price, oldPrice, image, quantity, describe ,idCategory , idStyle\r\n"
-				+ "FROM Product\r\n"
-				+ "WHERE idStyle = " + idStyle ;
-		return jdbcTemplate.query(sql, new LittleInforProductDTOMapper()); 
-	}
-	
-	public List<ProductDTO> getAllProduct(){ 
-		
-		String sql = "Use SingedShop select idProduct, nameProduct ,image, quantity, price, oldPrice, idStyle ,idCategory , purchases ,  describe , Date from Product" ; 
-		return jdbcTemplate.query(sql,  new FullProductDTOMapper()) ; 
-	}
-	
-	public List<LittleInforProductDTO> searchProduct(String keySearch){ 
-		
-		String sql = "Use SingedShop; SELECT * FROM Product WHERE nameProduct LIKE N'%"+ keySearch + "%';" ; 
-		return jdbcTemplate.query(sql,  new LittleInforProductDTOMapper()) ; 
-	}
-    */
+    public static function getAllProduct(){
+        $list = [];
+        $db = DB::getInstance();
+        $sql = " SELECT idProduct,nameProduct,quantity,price,oldPrice,`describe`,idStyle,`image`,purchases,idCategory, `CreatedDate`  FROM product  ";
+        $req = $db->query($sql);
     
+        foreach ($req->fetchAll() as $item) {
+            $list[] = new product(
+                $item['idProduct'],
+                $item['nameProduct'],
+                $item['quantity'],
+                $item['price'],
+                $item['oldPrice'],
+                $item['describe'],
+                $item['idStyle'],
+                $item['image'],
+                $item['purchases'],
+                $item['idCategory'],
+                $item['CreatedDate']
+            );
+        }
+        return $list;
+    }
+	
+    public static function findByIdProduct($idProduct){
+        $db = DB::getInstance();
+        $sql = "SELECT idProduct, nameProduct, quantity, price, oldPrice, `describe`, idStyle, `image`, purchases, idCategory, CreatedDate FROM product WHERE idProduct = ?";
+        $stmt = $db->prepare($sql);
+        $stmt->execute([$idProduct]);
+        $item = $stmt->fetch();
+    
+        if ($item) {
+            return new product(
+                $item['idProduct'],
+                $item['nameProduct'],
+                $item['quantity'],
+                $item['price'],
+                $item['oldPrice'],
+                $item['describe'],
+                $item['idStyle'],
+                $item['image'],
+                $item['purchases'],
+                $item['idCategory'],
+                $item['CreatedDate']
+            );
+        } else {
+            return null; // Trả về null nếu không tìm thấy sản phẩm
+        }
+    }   
+    
+    public static function search($keySearch){
+        $db = DB::getInstance();
+        $sql = "SELECT * FROM Product WHERE nameProduct LIKE ? ";
+        $stmt = $db->prepare($sql);
+        $stmt->execute(["%$keySearch%"]);
+        $items = $stmt->fetchAll();
+    
+        $result = [];
+        foreach ($items as $item) {
+            $product = new product(
+                $item['idProduct'],
+                $item['nameProduct'],
+                $item['quantity'],
+                $item['price'],
+                $item['oldPrice'],
+                $item['describe'],
+                $item['idStyle'],
+                $item['image'],
+                $item['purchases'],
+                $item['idCategory'],
+                $item['CreatedDate']
+            );
+            $result[] = $product;
+        }
+        return $result;
+    }
     
 }

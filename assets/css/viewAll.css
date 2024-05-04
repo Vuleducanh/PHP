@@ -1,0 +1,16 @@
+
+
+#div_slider_sale {
+	background-image: url(../img/viewAll.jpg);
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: 3px solid #FFFAFA;
+	border-top: none;
+	height: 400px;
+	background-position: center;
+	position: relative;
+}
+
+
+

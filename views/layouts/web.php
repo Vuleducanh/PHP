@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-            <title>SINGED-SHOP</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>SINGED-SHOP</title>
     
-                <?php foreach ($data['css_files'] as $css_file): ?>
-                    <link rel="stylesheet" href="<?= $css_file ?>">
-                <?php endforeach; ?>
+        <?php foreach ($data['css_files'] as $css_file): ?>
+            <link rel="stylesheet" href="<?= $css_file ?>">
+        <?php endforeach; ?>
+
     </head>
 
     <body>
@@ -57,14 +58,15 @@
                                 ?>
                                 </ul>
                             </i>
-                            <i class="fa-solid fa-cart-shopping icon_funtion" title="2"></i>
+                            <a href="http://localhost:8008/PHP/index.php?controller=cart&action=cart"><i class="fa-solid fa-cart-shopping icon_funtion" title="2"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="hide">
-                    <i class="fa-solid fa-circle-xmark"></i>
+                    <i class="fa-solid fa-circle-xmark closeSearch"></i>
                 </div>
-                <div id="div_menu"> <img id="icon_menu" src="./assets/img/menu.png">
+                <div id="div_menu"> 
+                    <img id="icon_menu" src="./assets/img/menu.png">
                     <div class="tab_menu">
                         <i class="fa-solid fa-circle-xmark close"></i>
                         <h1 id="title_menu">Danh mục sản phẩm </h1>
@@ -152,8 +154,8 @@
                 </div>
 
                 <div id="end_footer">
-                    <h3 class="title_endfooter">P/s : Website được lập bởi 1 nhóm nhỏ sinh viên  Đại học Sài Gòn</h3>
-                    <h3 class="title_endfooter endfooter2">* Website được hoàn thiện ngày : 27/2/2023</h3>
+                    <h3 class="title_endfooter">P/s : Website được lập cho vui bởi sinh viên  Đại học Sài Gòn</h3>
+                    <h3 class="title_endfooter endfooter2">* Website được hoàn thiện ngày : xx/x/20xx</h3>
                     <h3 id="title_address">Địa chỉ : Trụ sở chính/ 273 An Dương Vương – Phường 3 – Quận 5</h3>
                 </div>
             </div>
@@ -163,6 +165,26 @@
                 <script src="<?= $js_file ?>"></script>
             <?php endforeach; ?>
         <?php endif; ?>
+    
+    <script type="text/javascript">
+        var searchInput = document.getElementsByClassName('search-box')[0];
+        var searchButton = document.getElementsByClassName('fa-magnifying-glass')[0];
         
+        searchInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                performSearch();
+                }
+            });
+        
+        searchButton.addEventListener('click', function() {
+                performSearch();
+            });
+            
+        function performSearch() {
+            window.location.assign("http://localhost:8008/PHP/index.php?controller=pages&action=search&keysearch="+ searchInput.value+"&page=1");
+        }
+	</script>
+    
+
     </body>
 </html>

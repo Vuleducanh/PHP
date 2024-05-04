@@ -285,6 +285,12 @@ footer{
     cursor: pointer;
 }
 
+#text-billDetail{
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 15px;
+}
+
 .product-info {
     width: 300px;
     height: 150px;
@@ -294,13 +300,12 @@ footer{
     right: 0;
     top: 0;
     padding: 10px;
-    background-color: #429dec;
+    background-color: #c6c2c2;
     color: #fff;
     display: none;
     transform: translateY(100%);
     z-index: 5;
     border-radius: 5px;
-    font-family: Roboto;
     font-size: 14px;
   }
 

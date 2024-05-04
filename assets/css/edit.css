@@ -1,46 +1,72 @@
-#input_add_product{
-    margin-left: 50px;
-    display: flex;
-    flex-direction: column;
+#formSubmit {
+	margin-left: 50px;
+	display: flex;
+	flex-direction: column;
 }
 
-.title_edit{
-    margin: 20px 0px 20px 50px;
-    font-family: Roboto;
+i{
+	font-style: normal !important;	
 }
 
-label{
-    font-family: Roboto;
+:root {
+  --height-value-edit: 900px; /* Ä�á»‹nh nghÄ©a biáº¿n CSS */
+}
+
+#home-admin {
+	height: var(--height-value-edit) !important;
+}
+#menu{
+	height: var(--height-value-edit) !important;
+}
+
+#content{
+	height: var(--height-value-edit) !important;
+}
+
+.title_edit {
+	margin: 20px 0px 20px 50px;
+	font-family: Roboto;
+}
+
+label {
+	font-family: Roboto;
 }
 
 #name_edit,
 #quanty_edit,
 #price_edit,
-#describe_edit,
+.describe_edit,
 #style_edit,
-#category_edit{
-    font-size: 15px;
-    padding: 3px;
+#category_edit {
+	font-size: 15px;
+	padding: 3px;
 }
 
 #name_edit,
 #price_edit,
 
 #style_edit,
-#category_edit{
-    width: 20%;
+#category_edit {
+	width: 20%;
 }
 
-#quanty_edit{
-    width: 10%;
+#quanty_edit {
+	width: 10%;
 }
 
-#describe_edit{
-    width: 70%;
+.describe_edit {
+	width: 70%;
 }
 
-#submit_edit{
-    width: 30%;
-    height: 30px;
-    border-radius: 3px;
+#btnUpdateProduct,
+#btnAddProduct {
+	width: 300px;
+	height: 40px;
+	border-radius: 3px;
+	background-color: rgb(255, 0, 30);
+	font-family: Roboto;
+	color: azure;
+	font-size: 20px;
+	font-weight: 600;
+	border: 0;
 }

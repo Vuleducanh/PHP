@@ -28,18 +28,13 @@ function __construct() {
 }
 
 public function register() {
+
     // Load view
     $this->render('register', $this->data, null);
 }
 
 public function registerAccountUser()
 {   
-    // Kiểm tra xem người dùng đã đăng nhập chưa, nếu đã đăng nhập thì chuyển hướng về trang chính
-    if (!isset($_SESSION['user_id'])) {
-        header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
-        exit; // Kết thúc chương trình sau khi chuyển hướng
-    }    
-    
     // Xử lý khi người dùng nhấn nút Đăng ký
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phone = $_POST['phone_number'];

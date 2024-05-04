@@ -1,12 +1,15 @@
 <?php
 $controllers = array(
-  'pages' => ['home', 'error'],
+  'pages' => ['home','viewAllBestSaleProduct','viewAllNewProduct','search', 'error'],
   'sale' => ['sale','error'],
   'style' => ['style','error'],
   'product' => ['product','error'],
   'login' => ['login','loginAuthentication','logout','error'],
   'register' => ['register','registerAccountUser','error'],
-  'admin' => ['admin','error'],
+  'admin' => ['admin','user','updateRoleUser','update','deleteProduct','add','updateProduct','addProduct','confirmBill','cancelBill','dashBoard','billAdminPage','billDetailAdminPage','error'],
+  'cart' => ['cart','addCart','editCart','deleteCart','deleteAllCart','error'],
+  'pay' => ['pay','error'],
+  'profile' => ['profile','updateProfile','error']
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
 // Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi

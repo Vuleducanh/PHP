@@ -45,7 +45,7 @@
                             <button class="down_quantity"><i class="fa-solid fa-chevron-down"></i></button>
                         </div>
                         <div id="btn">
-                            <button id="btn_add_cart">Thêm vào giỏ <i class="fa-solid fa-cart-shopping"></i></button>
+                            <a href="http://localhost:8008/PHP/index.php?controller=cart&action=addCart&idProduct=<?php echo $detailProduct->getIdProduct();?>&idStyle=<?php echo $detailProduct->getIdStyle()?>"><button id="btn_add_cart">Thêm vào giỏ <i class="fa-solid fa-cart-shopping"></i></button></a>
                             <button id="btn_buy">Mua ngay</button>
                         </div>
                     </div>
@@ -83,3 +83,12 @@
                </div>
 
             </div>
+
+            <script>
+                <?php
+                    // Hiển thị thông báo nếu có
+                    if (isset($_GET['message'])) {
+                        echo 'alert("Thêm thành công");';
+                    } 
+                ?>
+            </script>

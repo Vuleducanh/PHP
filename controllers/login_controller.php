@@ -54,9 +54,9 @@ public function loginAuthentication()
             // Kiểm tra mật khẩu
             if (password_verify($password, $user->getPassword())) {
                 // Mật khẩu đúng, lưu thông tin người dùng vào session và chuyển hướng
-                $userRole = $user->getRole();
                 $_SESSION['user_id'] = $user->getIdUser();
-                $_SESSION['role'] = $userRole->getIdRole();
+                $_SESSION['role'] = $user->getRole()->getIdRole();
+                $_SESSION['user'] = serialize($user);
                 header("Location: http://localhost:8008/PHP/index.php?controller=pages&action=home");
             } else {
                 // Mật khẩu không đúng, hiển thị thông báo lỗi

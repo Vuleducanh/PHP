@@ -20,8 +20,7 @@
                 <h1 id="best_selling">Top bán chạy</h1>
 
                 <div id="list_product">
-                    <?php for($i = 1; $i <= 4; $i++ ):
-                        $product = $dataBestSaleProduct['bestSaleProduct'][$i] ?>
+                    <?php foreach ($dataBestSaleProduct['bestSaleProduct'] as $product): ?>
                         <div class="product">   
                         <a href="http://localhost:8008/PHP/index.php?controller=product&action=product&idProduct=<?php echo $product->getIdProduct(); ?>&idStyle=<?php echo $product->getIdStyle();?>">
                                 <div class="img_product" style="background-image: url(./assets/product/<?php echo $product->getImage(); ?>" alt="<?php echo $product->getNameProduct(); ?>)"> </div>
@@ -37,10 +36,10 @@
                                 </div>
                             </div>
                         </div>
-                    <?php endfor; ?>
+                    <?php endforeach; ?>
                 </div>
 
-                <button id="btn_seeall">Xem tất cả</button>
+                <a href="http://localhost:8008/PHP/index.php?controller=pages&action=viewAllBestSaleProduct&page=1" ><button id="btn_seeall">Xem tất cả</button></a>
             </div>
             
             <div id="banner">
@@ -70,8 +69,7 @@
                 </div>
 
                 <div id="list_product1">
-                    <?php for($i = 1; $i <= 8; $i++ ):
-                        $product = $dataNewProduct['newProduct'][$i] ?>
+                    <?php foreach ($dataNewProduct['newProduct'] as $product): ?>
                     <div class="product1">
                     <a href="http://localhost:8008/PHP/index.php?controller=product&action=product&idProduct=<?php echo $product->getIdProduct(); ?>&idStyle=<?php echo $product->getIdStyle();?>">
 							<div class="img_product1" style="background-image: url(./assets/product/<?php echo $product->getImage(); ?>" alt="<?php echo $product->getNameProduct(); ?>)"> </div>
@@ -84,8 +82,8 @@
                             </div>
                         </div>
                     </div>
-                    <?php endfor; ?>
+                    <?php endforeach; ?>
                 </div>
 
-                <button id="btn_seeall1">Xem tất cả</button>
+                <a href="http://localhost:8008/PHP/index.php?controller=pages&action=viewAllNewProduct&page=1" ><button id="btn_seeall1">Xem tất cả</button></a>
             </div>

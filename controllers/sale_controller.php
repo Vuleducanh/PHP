@@ -39,7 +39,7 @@ class SaleController extends BaseController
         $data = array(
               'css_files' => array(
                 './assets/css/header.css',
-                './assets/css/csssale.css',
+                './assets/css/sale.css',
                 './assets/css/footer.css',
                 './assets/icon/themify-icons/themify-icons.css',
                 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css'

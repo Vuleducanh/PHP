@@ -12,6 +12,7 @@ body {
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 	position: relative;
+	margin-top: 94px;
 }
 @keyframes gradient {
 	0% {
@@ -87,8 +88,8 @@ h3 {
 }
 
 input:focus {
-	outline: none; 
-	color: black;
+	outline: none;
+	color: black; 
 }
 
 #gender{
@@ -126,8 +127,8 @@ input:focus {
 }
 
 .btn_save:active {
-	transform: translateY(2px); /* Di chuyển button xuống 2px (hoặc giá trị phù hợp với bạn) */
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Thêm bóng để tạo hiệu ứng đè xuống */
+	transform: translateY(2px); /* Di chuyá»ƒn button xuá»‘ng 2px (hoáº·c giÃ¡ trá»‹ phÃ¹ há»£p vá»›i báº¡n) */
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* ThÃªm bÃ³ng Ä‘á»ƒ táº¡o hiá»‡u á»©ng Ä‘Ã¨ xuá»‘ng */
 }
 
 h3 {

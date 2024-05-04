@@ -310,6 +310,13 @@ footer{
     text-align: center;
 }
 
+.confirm{
+    padding: 4px;
+    background-color: rgb(14, 175, 14);
+    border-radius: 5px;
+    color: white;
+}
+
 #button-check{
     display: flex;
     flex-direction: column;
@@ -322,7 +329,12 @@ footer{
     color: white;
     margin-bottom: 20px;
     border: none;
+    font-size: 12px;
     width: 60px;
+}
+
+.center-text{
+    text-align: center !important;
 }
 
 .cancel{
@@ -331,6 +343,7 @@ footer{
     border-radius: 5px;
     color: white;
     border: none;
+    font-size: 13px;
     width: 60px;
 }
 
@@ -342,5 +355,6 @@ footer{
 }
 
 .click_id{
-    color: red;
+	color: red;
 }
+

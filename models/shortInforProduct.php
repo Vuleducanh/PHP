@@ -74,13 +74,13 @@ class shortInforProduct {
         $this->idStyle = $idStyle;
     }
 
-    public static function getBestSaleProduct()
+    public static function getBestSaleProduct($limit, $offset)
     {
         $list = [];
         $db = DB::getInstance();
         $sql = "SELECT idProduct, nameProduct, price, oldPrice, idStyle, idCategory, image
                 FROM Product
-                ORDER BY purchases DESC";
+                ORDER BY purchases DESC  LIMIT $limit OFFSET $offset" ;
         $req = $db->query($sql);
     
         foreach ($req->fetchAll() as $item) {
@@ -97,13 +97,13 @@ class shortInforProduct {
         return $list;
     }
 
-    public static function getNewProduct()
+    public static function getNewProduct($limit, $offset)
     {
         $list = [];
         $db = DB::getInstance();
-        $sql = "SELECT idProduct, nameProduct, price, oldPrice, idStyle, idCategory, image, Date
-                FROM Product
-                ORDER BY Date DESC";
+        $sql = "SELECT idProduct, nameProduct, price, oldPrice, idStyle, idCategory, image, `CreatedDate`
+        FROM Product
+        ORDER BY `CreatedDate` DESC  LIMIT $limit OFFSET $offset";
         $req = $db->query($sql);
     
         foreach ($req->fetchAll() as $item) {
@@ -118,6 +118,16 @@ class shortInforProduct {
             );
         }
         return $list;
+    }
+
+    // Hàm đếm tổng số bài viết
+    public static function countAll()
+    {
+        $db = DB::getInstance();
+        $sql = "SELECT COUNT(*) FROM product";
+        $req = $db->query($sql);
+        $count = $req->fetchColumn();
+        return $count;
     }
     
     
