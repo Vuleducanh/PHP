@@ -48,7 +48,7 @@
                         <li><i class="fa-solid fa-gear icon-list-menu"></i> <a
                             href="#">Cài đặt</a></li>
                         <li><i class="fa-solid fa-gear icon-list-menu"></i> <a
-                            href="http://localhost:8008/PHP/index.php?controller=admin&action=logout">Đăng xuất</a></li>
+                            href="http://localhost:8008/PHP/index.php?controller=login&action=logout">Đăng xuất</a></li>
                     </ul>
                 </div>
             </div>

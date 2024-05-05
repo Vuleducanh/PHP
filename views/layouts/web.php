@@ -44,7 +44,7 @@
                                     // Kiểm tra xem đã tồn tại $_SESSION['user_id'] hay chưa
                                     if (isset($_SESSION['user_id'])) {
                                         // Nếu đã đăng nhập, hiển thị liên kết đến trang thông tin 
-                                        if($_SESSION['role'] == 1 ) {
+                                        if($_SESSION['role'] == 1 || $_SESSION['role'] == 3) {
                                             echo '<li><a href="http://localhost:8008/PHP/index.php?controller=admin&action=admin">Quản lý kho *</a></li>';
                                         }
                                         echo '<li><a href="http://localhost:8008/PHP/index.php?controller=profile&action=profile">Thông tin</a></li>';

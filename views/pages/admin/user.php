@@ -38,8 +38,8 @@
                                 <option value="3">ADMIN2</option>
                                 <option value="2">USER</option>
                             <?php elseif ($role == 'ADMIN2'): ?>
-                                <option value="3">ADMIN2</option>
-                                <option value="1" selected>ADMIN</option>
+                                <option value="3"selected>ADMIN2</option>
+                                <option value="1">ADMIN</option>
                                 <option value="2">USER</option>
                             <?php else: ?>
                                 <option value="2" selected>USER</option>
@@ -66,7 +66,7 @@
 		function updateRole(button) {
             var userId = button.value;
             var role = document.getElementById('role'+userId).value;
-            alert( "update");
-            window.location = "http://localhost:8008/PHP/index.php?controller=admin&action=updateRoleUser&role=" + role +"&idUser="+userId;
+            alert( "update" );
+            window.location = "http://localhost:8008/PHP/index.php?controller=admin&action=updateRoleUser&newRole=" + role +"&idUser="+userId;
         }
 	</script>

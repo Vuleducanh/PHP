@@ -9,6 +9,8 @@
             echo '<div class="alert alert-warning" role="alert">Bạn không có quyền truy cập!</div>';
         } elseif (isset($_GET['sessionTimeout'])) {
             echo '<div class="alert alert-info" role="alert">Phiên làm việc hết hạn, yêu cầu đăng nhập lại!</div>';
+        }elseif (isset($_GET['registerSuccess'])) {
+            echo '<div class="alert alert-info" role="alert">Tạo tài khoản thành công</div>';
         }
         ?>
         

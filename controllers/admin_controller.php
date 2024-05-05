@@ -37,7 +37,7 @@ class AdminController extends BaseController
   
   public function admin()
   {   
-    if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() != 1) {
+    if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() == 2) {
         header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
       exit; 
     }
@@ -52,7 +52,7 @@ class AdminController extends BaseController
 
   public function update()
   {   
-    if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() != 1) {
+    if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() == 2) {
         header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
       exit; 
     }
@@ -75,7 +75,7 @@ class AdminController extends BaseController
 
 public function add()
 {   
-    if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() != 1) {
+    if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() == 2) {
         header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
       exit; 
     }
@@ -165,7 +165,7 @@ public function deleteProduct()
 
 public function dashBoard()
 {   
-  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() != 1) {
+  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() == 2) {
       header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
     exit; 
   }
@@ -180,7 +180,7 @@ public function dashBoard()
 
 public function billAdminPage()
 {   
-  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() != 1) {
+  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() == 2) {
       header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
     exit; 
   }
@@ -195,7 +195,7 @@ public function billAdminPage()
 
 public function billDetailAdminPage()
 {   
-  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() != 1) {
+  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() == 2) {
       header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
     exit; 
   }
@@ -211,7 +211,7 @@ public function billDetailAdminPage()
 
 public function confirmBill()
 {   
-  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() != 1) {
+  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() == 2) {
       header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
     exit; 
   }
@@ -224,7 +224,7 @@ public function confirmBill()
 
 public function cancelBill()
 {   
-  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() != 1) {
+  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() == 2) {
       header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
     exit; 
   }
@@ -237,7 +237,7 @@ public function cancelBill()
 
 public function user()
 {   
-  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() != 1) {
+  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() == 2) {
       header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
     exit; 
   }
@@ -251,14 +251,13 @@ public function user()
 
 public function updateRoleUser()
 {   
-  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() != 1) {
+  if (!isset($_SESSION['user_id']) && $_SESSION['role']->getIdRole() == 2) {
       header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
     exit; 
   }
 
-  $idUser = isset($_GET['idUser']) ;
-  $role = isset($_GET['role']) ;
-
+  $idUser = $_GET['idUser'];  
+  $role = $_GET['newRole'];
   role::updateRole($idUser,$role);
   header("Location: http://localhost:8008/PHP/index.php?controller=admin&action=user");
 }

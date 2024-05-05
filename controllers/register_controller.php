@@ -56,7 +56,7 @@ public function registerAccountUser()
         
       if ($result) {
           // Nếu đăng ký thành công, chuyển hướng đến trang đăng nhập
-          header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
+          header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login&registerSuccess=true");
           exit;
       } else {
           // Nếu có lỗi xảy ra trong quá trình đăng ký, hiển thị thông báo lỗi
