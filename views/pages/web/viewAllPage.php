@@ -30,7 +30,7 @@
 			<?php for ($i = 1; $i <= $totalPage; $i++): ?>
 				<a href="http://localhost:8008/PHP/index.php?controller=pages&action=<?php echo $action?>&page=<?php echo $i; ?>" <?php if ($i == $currentPage) echo 'class="active"'; ?>><?php echo $i; ?></a>
 			<?php endfor; ?>
-			<a href="<?php echo ($currentPage < $totalPage) ? 'http://localhost:8008/PHP/index.php?controller=pages&action=&'. $action. 'page=' . ($currentPage + 1) : '#'; ?>">&raquo;</a>
+			<a href="<?php echo ($currentPage < $totalPage) ? 'http://localhost:8008/PHP/index.php?controller=pages&action='. $action. '&page=' . ($currentPage + 1) : '#'; ?>">&raquo;</a>
 		</div>
 	<?php endif; ?>
 

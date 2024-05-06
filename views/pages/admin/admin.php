@@ -92,7 +92,6 @@
 		}
 		
 		function deleteProduct(idProduct) {
-            alert(idProduct);
 	        $.ajax({
 	            url: 'http://localhost:8008/PHP/index.php?controller=admin&action=deleteProduct',
 	            data: {idProduct: idProduct
@@ -101,6 +100,8 @@
 	            success: function (result) {
                     if (result) 
                         alert("Xóa sản phẩm thành công !");
+                        window.location = "http://localhost:8008/PHP/index.php?controller=admin&action=admin";
+    
 	            },
 	            error: function (error) {
 	            	alert("Xóa sản phẩm thất bại !");

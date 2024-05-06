@@ -48,7 +48,7 @@
                                             echo '<li><a href="http://localhost:8008/PHP/index.php?controller=admin&action=admin">Quản lý kho *</a></li>';
                                         }
                                         echo '<li><a href="http://localhost:8008/PHP/index.php?controller=profile&action=profile">Thông tin</a></li>';
-                                        echo '<li><a href="http://localhost:8008/PHP/index.php?controller=login&action=logout">Đơn hàng của tôi</a></li>';
+                                        echo '<li><a href="">Đơn hàng của tôi</a></li>';
                                         echo '<li><a href="http://localhost:8008/PHP/index.php?controller=login&action=logout">Giỏ hàng</a></li>';
                                         echo '<li><a href="http://localhost:8008/PHP/index.php?controller=login&action=logout">Đăng xuất</a></li>';
                                     } else {

@@ -34,15 +34,14 @@ class PayController extends BaseController
       $bill = new bill(0,$phone,$email,$cart['totalCart']->getQuantity(),$address,$timeOrder,$status,$cart['totalCart']->getTotalPrice(),$cart['itemCart']);
       bill::addBill($bill);
 
-
       $idNewBill = bill::getIdNewBill();
       foreach ($cart['itemCart'] as $item){
-          $billDetail = new billDetail(0, $item->getQuantity(), $item->getTotalPrice(), $item->getProduct()->getIdProduct(), $item->getProduct()->getNameProduct(), $item->getProduct()->getIdCategory(), $idNewBill, $item->getProduct()->getImage());
+          $billDetail = new billDetail(0,$item->getQuantity(), $item->getTotalPrice(), $item->getProduct()->getIdProduct(), $item->getProduct()->getNameProduct(), $item->getProduct()->getIdCategory(), $idNewBill, $item->getProduct()->getImage());
           billDetail::addBillDetail($billDetail);
       }
 
       header("Location: http://localhost:8008/PHP/index.php?controller=cart&action=deleteAllCart&pay=true");
-      $billDetail = new billDetail();
+      exit();
     }
 
     $data = array(

@@ -163,27 +163,23 @@ class bill {
 
     public static function addBill($bill) {
         $db = DB::getInstance();
-        $sql = "INSERT INTO Bill (phone, email, totalQuanty, address, orderDate, status, totalPrice) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO bill (phone, email, totalQuanty, address, orderDate, status, totalPrice) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $db->prepare($sql);
-        $stmt->bindParam(1, $bill->getPhone());
-        $stmt->bindParam(2, $bill->getEmail());
-        $stmt->bindParam(3, $bill->getTotalQuanty(), PDO::PARAM_INT);
-        $stmt->bindParam(4, $bill->getAddress());
-        $stmt->bindParam(5, $bill->getOrderDate());
-        $stmt->bindParam(6, $bill->getStatus());
-        $stmt->bindParam(7, $bill->getTotalPrice(), PDO::PARAM_INT);
-        $insert = $stmt->execute();
+        $stmt->execute([$bill->getPhone(), $bill->getEmail(), $bill->getTotalQuanty(), $bill->getAddress(), $bill->getOrderDate(), $bill->getStatus(), $bill->getTotalPrice()]);     
         $stmt->closeCursor();
-        return $insert;
     }
+    
     
     public static function getIdNewBill() {
         $db = DB::getInstance();
-        $sql = "SELECT MAX(idBill) FROM Bill";
+        $sql = "SELECT MAX(idBill) AS idNewBill FROM bill"; // Use alias for clarity
         $req = $db->query($sql);
-        $count = $req->fetchColumn();
-        return $count;
-    }
+      
+        // Fetch a single value (the maximum ID)
+        $idNewBill = $req->fetchColumn();
+      
+        return $idNewBill;
+      }
 
 }
 ?>

@@ -159,7 +159,6 @@ public function deleteProduct()
 
     $response = true;
     exit(json_encode($response));
-    header("Location: http://localhost:8008/PHP/index.php?controller=admin&action=admin");
   }
 } 
 

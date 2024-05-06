@@ -120,18 +120,11 @@ class  billDetail{
         $db = DB::getInstance();
         $sql = "INSERT INTO SingedShop.BillDetail (idProduct, quanty, totalPrice, idCategory, nameProduct, idBill, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $db->prepare($sql);
-        $stmt->bindParam(1, $billDetail->getIdProduct());
-        $stmt->bindParam(2, $billDetail->getQuanty(), PDO::PARAM_INT);
-        $stmt->bindParam(3, $billDetail->getTotalPrice(), PDO::PARAM_INT);
-        $stmt->bindParam(4, $billDetail->getIdCategory());
-        $stmt->bindParam(5, $billDetail->getNameProduct());
-        $stmt->bindParam(6, $billDetail->getIdBill());
-        $stmt->bindParam(7, $billDetail->getImage());
-        $stmt->execute();
+        $stmt->execute([$billDetail->getIdProduct(), $billDetail->getQuanty(), $billDetail->getTotalPrice(), $billDetail->getIdCategory(), $billDetail->getNameProduct(), $billDetail->getIdBill(), $billDetail->getImage()]);
         $rowCount = $stmt->rowCount();
         $stmt->closeCursor();
         return $rowCount;
-    }
+    }    
     
 }
 ?>
