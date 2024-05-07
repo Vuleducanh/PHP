@@ -24,19 +24,6 @@ class ProfileController extends BaseController
     // }
 
     $data = array(
-        'css_files' => array(
-            './assets/css/header.css',
-            './assets/css/footer.css',
-            './assets/css/profile.css',
-            './assets/icon/themify-icons/themify-icons.css',
-            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css'
-            // Thêm các đường dẫn đến các file CSS cần import cho trang home
-        ),
-        'js_files' => array(
-            './assets/JavaScript/header.js',
-            'https://code.jquery.com/jquery-3.6.0.min.js'
-            // Thêm các đường dẫn đến các file JS cần import cho trang home
-        ),
         'dataStyle' => $dataStyle // Truyền danh sách tên style vào dữ liệu để sử dụng trong view
     );
      $this->render('profile', $data,null);

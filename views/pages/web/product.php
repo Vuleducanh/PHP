@@ -1,3 +1,8 @@
+    <link rel="stylesheet"  href="./assets/css/header.css">
+    <link rel="stylesheet"  href="./assets/css/product.css">
+    <link rel="stylesheet"  href="./assets/css/footer.css">
+    <link rel="stylesheet"  href="./assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
             <div id="content_product">
                 <div id="div_detail_product">
@@ -40,7 +45,7 @@
                             </div>
                         </div>
                         <div id="quantity_product">
-                            <h3 id="quantity">Số lượng :<?php echo $detailProduct->getQuantity(); ?></h3> 
+                            <h3 id="quantity">Số lượng :1</h3> 
                             <button class="up_quantity"><i class="fa-solid fa-chevron-up"></i></button>
                             <button class="down_quantity"><i class="fa-solid fa-chevron-down"></i></button>
                         </div>
@@ -84,6 +89,8 @@
 
             </div>
 
+            <script src="./assets/JavaScript/header.js"></script>
+            <script src="./assets/JavaScript/slideProduct.js"></script>
             <script>
                 <?php
                     // Hiển thị thông báo nếu có

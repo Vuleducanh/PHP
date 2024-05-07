@@ -5,10 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <title>SINGED-SHOP</title>
-    
-        <?php foreach ($data['css_files'] as $css_file): ?>
-            <link rel="stylesheet" href="<?= $css_file ?>">
-        <?php endforeach; ?>
 
     </head>
 
@@ -160,11 +156,6 @@
                 </div>
             </div>
 
-        <?php if (isset($js_files)): ?>
-            <?php foreach ($data['js_files'] as $js_file): ?>
-                <script src="<?= $js_file ?>"></script>
-            <?php endforeach; ?>
-        <?php endif; ?>
     
     <script type="text/javascript">
         var searchInput = document.getElementsByClassName('search-box')[0];

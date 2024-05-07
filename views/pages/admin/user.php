@@ -66,7 +66,7 @@
 		function updateRole(button) {
             var userId = button.value;
             var role = document.getElementById('role'+userId).value;
-            alert( "update" );
+            alert("Update role" );
             window.location = "http://localhost:8008/PHP/index.php?controller=admin&action=updateRoleUser&newRole=" + role +"&idUser="+userId;
         }
 	</script>

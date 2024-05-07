@@ -1,3 +1,9 @@
+<link rel="stylesheet"  href="./assets/css/header.css">
+<link rel="stylesheet"  href="./assets/css/pay.css">
+<link rel="stylesheet"  href="./assets/css/footer.css">
+<link rel="stylesheet"  href="./assets/icon/themify-icons/themify-icons.css">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
 <div id="content_pay">
     <?php $cart = unserialize($_SESSION['cart']); $totalCart =  $cart['totalCart'];?>
 
@@ -58,3 +64,5 @@
         </div>
     </div>
 </div>
+
+<script src="./assets/JavaScript/header.js"></script>

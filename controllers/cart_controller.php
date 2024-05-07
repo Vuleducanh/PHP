@@ -30,10 +30,6 @@ class CartController extends BaseController
   
   public function cart()
   {
-    if (!isset($_SESSION['user_id'])) {
-      header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
-      exit; // Kết thúc chương trình sau khi chuyển hướng
-    }
 
     $style = style::getStyleProduct(); // Lấy danh sách các style  
     $dataStyle = array('style' => $style);
@@ -43,11 +39,6 @@ class CartController extends BaseController
   }
 
   public function addCart(){
-    if (!isset($_SESSION['user_id'])) {
-      header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
-      exit; // Kết thúc chương trình sau khi chuyển hướng
-    }
-
     $idProduct = isset($_GET['idProduct']) ? $_GET['idProduct'] : null;
     $idStyle = isset($_GET['idStyle']) ? $_GET['idStyle'] : null ; 
     
@@ -64,10 +55,6 @@ class CartController extends BaseController
   }
 
   public function editCart(){
-    if (!isset($_SESSION['user_id'])) {
-      header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
-      exit; // Kết thúc chương trình sau khi chuyển hướng
-    }
     $idProduct = $_GET['idProduct'];
     $quantity = $_GET['quantity'];
 
@@ -85,11 +72,6 @@ class CartController extends BaseController
   }
 
   public function deleteAllCart(){
-    if (!isset($_SESSION['user_id'])) {
-      header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
-      exit; // Kết thúc chương trình sau khi chuyển hướng
-    }
-
     $pay = isset($_GET['pay'])  ? $_GET['pay'] : false;
 
     if (isset($_SESSION['cart'])) {
@@ -106,10 +88,6 @@ class CartController extends BaseController
   }
 
   public function deleteCart(){
-    if (!isset($_SESSION['user_id'])) {
-      header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
-      exit; // Kết thúc chương trình sau khi chuyển hướng
-    }
     $idProduct = $_GET['idProduct'];
 
     $cart = unserialize($_SESSION['cart']);

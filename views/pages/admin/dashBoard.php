@@ -1,5 +1,10 @@
+<link rel="stylesheet"  href="./assets/css/admin.css">
+<link rel="stylesheet"  href="./assets/css/sweetalert2.min.css">
+<link rel="stylesheet"  href="./assets/icon/themify-icons/themify-icons.css">
+<link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
-    <div id="content" style="background-color: white">
+  <div id="content" style="background-color: white">
         <div style="width: 100%; margin-top: 50px;">
             <canvas id="revenueChart"></canvas>
         </div>
@@ -7,7 +12,7 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        fetch('http://localhost:8080/spring-mvc/api/dashboard')
+        fetch('http://localhost:8008/PHP/index.php?controller=admin&action=dashBoard')
             .then(response => response.json())
             .then(data => {
                 var monthLabels = data.map(item => item.Month);
@@ -40,3 +45,7 @@
             .catch(console.error('Error:', error));
     });
     </script>
+
+<script src="./assets/JavaScript/sweetalert2.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

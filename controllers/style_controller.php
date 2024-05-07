@@ -12,10 +12,6 @@ class StyleController extends BaseController
 
     public function style() // Thay đổi tên hàm
     {
-      if (!isset($_SESSION['user_id'])) {
-        header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
-        exit; // Kết thúc chương trình sau khi chuyển hướng
-      }
 
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         $idStyle = isset($_GET['idStyle']) ? $_GET['idStyle'] : 1;
@@ -39,18 +35,6 @@ class StyleController extends BaseController
         
         // Truyền dữ liệu cho view
         $data = array(
-              'css_files' => array(
-                './assets/css/header.css',
-                './assets/css/style.css',
-                './assets/css/footer.css',
-                './assets/icon/themify-icons/themify-icons.css',
-                'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css'
-                // Thêm các đường dẫn đến các file CSS cần import cho trang home
-            ),
-            'js_files' => array(
-                './assets/JavaScript/header.js'
-                // Thêm các đường dẫn đến các file JS cần import cho trang home
-            ),
             'dataProductStyle' => $dataProductStyle,
             'totalPage' => $totalPage,
             'currentPage' => $page,

@@ -14,11 +14,6 @@ class SaleController extends BaseController
 
     public function sale() // Thay đổi tên hàm
     { 
-      if (!isset($_SESSION['user_id'])) {
-        header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
-        exit; // Kết thúc chương trình sau khi chuyển hướng
-    }
-  
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         $limit = 8; // Số bài viết hiển thị trên mỗi trang
         $offset = ($page - 1) * $limit;
@@ -37,18 +32,6 @@ class SaleController extends BaseController
 
         // Truyền dữ liệu cho view
         $data = array(
-              'css_files' => array(
-                './assets/css/header.css',
-                './assets/css/sale.css',
-                './assets/css/footer.css',
-                './assets/icon/themify-icons/themify-icons.css',
-                'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css'
-                // Thêm các đường dẫn đến các file CSS cần import cho trang home
-            ),
-            'js_files' => array(
-                './assets/JavaScript/header.js'
-                // Thêm các đường dẫn đến các file JS cần import cho trang home
-            ),
             'dataSale' => $dataSale,
             'totalPage' => $totalPage,
             'currentPage' => $page,

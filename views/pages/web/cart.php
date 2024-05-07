@@ -1,3 +1,9 @@
+<link rel="stylesheet"  href="./assets/css/header.css">
+<link rel="stylesheet"  href="./assets/css/cart.css">
+<link rel="stylesheet"  href="./assets/css/footer.css">
+<link rel="stylesheet"  href="./assets/icon/themify-icons/themify-icons.css">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
 <div id="content_cart">
         <?php $cart = unserialize($_SESSION['cart']);  
               $totalCart =  $cart['totalCart'];?>
@@ -55,7 +61,8 @@
                     <a href="http://localhost:8008/PHP/index.php?controller=cart&action=deleteAllCart"><button class="btn_delete_cart">Xóa tất cả</button></a>
                 </div>
             </div>
-
+    <script src="./assets/JavaScript/sweetalert2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
 
         var h1Element = document.getElementById('true');

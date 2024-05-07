@@ -1,3 +1,8 @@
+    <link rel="stylesheet"  href="./assets/css/header.css">
+    <link rel="stylesheet"  href="./assets/css/sale.css">
+    <link rel="stylesheet"  href="./assets/css/footer.css">
+    <link rel="stylesheet"  href="./assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
         <div id="content">
             <div id="div_slider_sale"></div>
@@ -37,3 +42,5 @@
 
 
         </div>
+
+        <script src="./assets/JavaScript/header.js"></script>

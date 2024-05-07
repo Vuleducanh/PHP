@@ -31,7 +31,8 @@ class AdminController extends BaseController
       ),
       'js_files' => array(
           './assets/JavaScript/sweetalert2.min.js',
-          'https://code.jquery.com/jquery-3.6.0.min.js',   
+          'https://code.jquery.com/jquery-3.6.0.min.js',
+          'https://cdn.jsdelivr.net/npm/chart.js',   
       ));
   }
   
@@ -168,13 +169,8 @@ public function dashBoard()
       header("Location: http://localhost:8008/PHP/index.php?controller=login&action=login");
     exit; 
   }
-
-  $product = product::getAllProduct();
-  $dataAllProduct = array('product' => $product);
-  
-  $layout = 'admin'; // Đặt layout là 'admin'
-  $this->data = array_merge($this->data, array('dataAllProduct'=>$dataAllProduct));
-  $this->render('admin', $this->data,$layout); 
+  $layout = 'admin';
+  $this->render('dashBoard', $this->data,$layout); 
 }
 
 public function billAdminPage()

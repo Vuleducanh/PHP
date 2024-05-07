@@ -1,3 +1,10 @@
+<link rel="stylesheet"  href="./assets/css/admin.css">
+<link rel="stylesheet"  href="./assets/css/edit.css">
+<link rel="stylesheet"  href="./assets/css/sweetalert2.min.css">
+<link rel="stylesheet"  href="./assets/icon/themify-icons/themify-icons.css">
+<link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
 <div id="content">
 			    <h1 id="seen-detail">Click vào id để xem chi tiết đơn hàng</h1>
                 <div id="div-table">
@@ -43,3 +50,6 @@
                     </table>
                 </div>
 </div>
+
+<script src="./assets/JavaScript/sweetalert2.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

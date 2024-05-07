@@ -36,7 +36,7 @@
                         <li><i class="fa-solid fa-house-lock icon-list-menu"></i></i> <a
                             href="http://localhost:8008/PHP/index.php?controller=admin&action=admin">Home</a></li>
                         <li><i class="fa-solid fa-chart-line icon-list-menu"></i> <a
-                            href="#">Thống kê</a></li>
+                            href="http://localhost:8008/PHP/index.php?controller=admin&action=dashBoard">Thống kê</a></li>
                         <li><i class="fa-solid fa-file icon-list-menu"></i> <a
                             href="http://localhost:8008/PHP/index.php?controller=pages&action=home">Pages</a></li>
                         <li><i class="fa-solid fa-file-invoice icon-list-menu"></i> <a

@@ -10,21 +10,6 @@ class RegisterController extends BaseController
 function __construct() {
 
     $this->folder = 'pages';
-    
-    // Khởi tạo biến $data
-    $this->data = array(
-        'css_files' => array(
-            './assets/css/header.css',
-            './assets/css/footer.css',
-            './assets/css/register.css',
-            './assets/icon/themify-icons/themify-icons.css',
-            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css',
-            'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css'
-        ),
-        'js_files' => array(
-            './assets/JavaScript/header.js',
-        )
-    );
 }
 
 public function register() {

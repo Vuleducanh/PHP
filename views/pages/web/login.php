@@ -1,3 +1,10 @@
+<link rel="stylesheet" href="./assets/css/header.css">
+<link rel="stylesheet" href="./assets/css/login.css">
+<link rel="stylesheet" href="./assets/css/footer.css">
+<link rel="stylesheet" href="./assets/icon/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
 <div id="content">
     <div id="background_login">
 
@@ -35,3 +42,5 @@
         </div>
     </div>
 </div>
+
+<script src="./assets/JavaScript/header.js"></script>
