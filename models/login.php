@@ -141,6 +141,21 @@ public static function getAccountUser($phone) {
         else return false;
     }
 
+    public static function checkExistAccount($phone){
+        $db = DB::getInstance();
+        $sql = "SELECT COUNT(*) AS count FROM users WHERE phone = ?";
+        $stmt = $db->prepare($sql);
+        $stmt->execute([$phone]);
+        $result = $stmt->fetch();
+    
+        // Nếu số lượng bằng 0, tức là số điện thoại chưa tồn tại
+        if ($result['count'] == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public static function getFullUser() {
         $db = DB::getInstance();
         $sql = "SELECT users.phone, users.password, users.idUser, users.fullName, users.gender, users.age, users.address,users.email ,role.*

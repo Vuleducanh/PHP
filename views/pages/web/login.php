@@ -10,13 +10,11 @@
 
         <?php
         // Hiển thị thông báo nếu có
-        if (isset($_GET['incorrectAccount'])) {
-            echo '<div class="alert alert-danger" role="alert">Tên đăng nhập hoặc mật khẩu sai!</div>';
-        } elseif (isset($_GET['accessDenied'])) {
+        if (isset($_GET['accessDenied'])) {
             echo '<div class="alert alert-warning" role="alert">Bạn không có quyền truy cập!</div>';
         } elseif (isset($_GET['sessionTimeout'])) {
             echo '<div class="alert alert-info" role="alert">Phiên làm việc hết hạn, yêu cầu đăng nhập lại!</div>';
-        }elseif (isset($_GET['registerSuccess'])) {
+        } elseif (isset($_GET['registerSuccess'])) {
             echo '<div class="alert alert-info" role="alert">Tạo tài khoản thành công</div>';
         }
         ?>
@@ -25,11 +23,11 @@
             <h2 id="title_login">Đăng nhập</h2>
             <h3 id="name_shop">Singed/Shop</h3>
 
-            <form id="login_form" action="http://localhost:8008/PHP/index.php?controller=login&action=loginAuthentication" method="post">
+            <div id="login_form">
                 <input id="phone_number" name="username" type="text" placeholder="Số điện thoại" required>
                 <input id="passwd" name="password" type="password" placeholder="Mật khẩu" required>
-                <button id="btn_login" type="submit">Đăng nhập</button>
-            </form>
+                <button id="btn_login">Đăng nhập</button>
+            </div>
 
             <div id="login_google">
                 <a id="or">hoặc</a>
@@ -43,4 +41,27 @@
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./assets/JavaScript/header.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn_login").click(function(){
+        var username = $("#phone_number").val();
+        var password = $("#passwd").val();
+        
+        $.post("http://localhost:8008/PHP/index.php?controller=login&action=loginAuthentication", { 
+            username: username, 
+            password: password 
+        }, 
+        function(response){
+            var data = JSON.parse(response);
+            if(data == "success"){
+               alert("Đăng nhập thành công!");
+               window.location.href = "http://localhost:8008/PHP/index.php";
+            }
+            else alert("Đăng nhập thất bại");
+        }
+        );
+    });
+});
+</script>
