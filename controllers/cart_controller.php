@@ -40,19 +40,22 @@ class CartController extends BaseController
 
   public function addCart(){
     $idProduct = isset($_GET['idProduct']) ? $_GET['idProduct'] : null;
-    $idStyle = isset($_GET['idStyle']) ? $_GET['idStyle'] : null ; 
-    
+    $idStyle = isset($_GET['idStyle']) ? $_GET['idStyle'] : null; 
+    $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : 1; // Số lượng mặc định là 1 nếu không được truyền vào
+
     $cart = unserialize($_SESSION['cart']);
-    $cart = cart::addCart($idProduct,$cart);
+    $cart = cart::addCart($idProduct, $cart, $quantity); // Thêm số lượng vào giỏ hàng
 
     $totalCart = $cart['totalCart'];
     $totalCart->setTotalPrice(cart::getTotalPriceCart($cart));
     $totalCart->setQuantity(cart::getTotalQuantyCart($cart));
     $cart['totalCart'] = $totalCart;
     
-    $_SESSION['cart'] = serialize($cart) ;
+    $_SESSION['cart'] = serialize($cart);
     header("Location: http://localhost:8008/PHP/index.php?controller=product&action=product&idProduct=$idProduct&idStyle=$idStyle&message=true");
-  }
+}
+
+
 
   public function editCart(){
     $idProduct = $_GET['idProduct'];

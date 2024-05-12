@@ -26,10 +26,12 @@
             <div id="check_box_pay">
                 <h4 id="title_payment">Hình thức thanh toán</h4>
                 <div>
-                    <input type="checkbox" id="cash" name="paymentMethod" value="tienmat"> <label for="tienmat">Tiền mặt</label>
+                    <input type="radio" id="cash" name="paymentMethod" value="tienmat" required>
+                    <label for="cash">Tiền mặt</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="transfer" name="paymentMethod" value="chuyenkhoan"> <label for="chuyenkhoan">Chuyển khoản</label>
+                    <input type="radio" id="transfer" name="paymentMethod" value="chuyenkhoan" required>
+                    <label for="transfer">Chuyển khoản</label>
                 </div>
             </div>
             <hr>
@@ -37,31 +39,32 @@
         </div>
     </form>
 
-        <div id="content_infor_product">
-                <div id="title_product">
-                    <h3>Sản phẩm</h3>
-                    <label><?php  echo $totalCart->getQuantity(); ?></label>
+    <div id="content_infor_product">
+    <div id="title_product">
+        <h3>Sản phẩm</h3>
+        <label><?php echo $totalCart->getQuantity(); ?></label>
+    </div>
+    <div id="infor_product">
+        <ul>
+            <?php foreach ($cart['itemCart'] as $item): ?>
+                <div id="product_to_order">
+                    <div id="name_price">
+                        <h4 id="name_product"><?php echo $item->getProduct()->getNameProduct();?></h4>
+                        <h4 id="price_product"><?php echo $item->getProduct()->getPrice();?></h4>
+                        <h4 id="quantity_product">Số lượng : <?php echo $item->getQuantity(); ?></h4> <!-- Thêm dòng này để hiển thị số lượng sản phẩm -->
+                    </div>
                 </div>
-                <div id="infor_product">
-                    <ul>
-                        <?php foreach ($cart['itemCart'] as $item): ?>
-                            <div id="product_to_order">
-                                <div id="name_price">
-                                    <h4 id="name_product"><?php echo $item->getProduct()->getNameProduct();?></h4>
-                                    <h4 id="price_product"><?php echo $item->getProduct()->getPrice();?></h4>
-                                </div>
-                                <h4> Số lượng : <?php echo $item->getProduct()->getQuantity(); ?></h4>
-                            </div>
-                            <hr>
-                        <?php endforeach; ?>
-                    </ul>									
-                </div>
-                <div id="total_price">Tổng thành tiền : <?php  echo $totalCart->getTotalPrice(); ?></div>
-                <div id="sale">
-                    <input class="code_sale" value="Mã khuyễn mãi">
-                    <button class="btn_code_sale">Xác nhận</button>
-                </div>
-        </div>
+                <hr>
+            <?php endforeach; ?>
+        </ul>									
+    </div>
+    <div id="total_price">Tổng thành tiền : <?php echo $totalCart->getTotalPrice(); ?></div>
+    <div id="sale">
+        <input class="code_sale" value="Mã khuyễn mãi">
+        <button class="btn_code_sale">Xác nhận</button>
+    </div>
+</div>
+
     </div>
 </div>
 

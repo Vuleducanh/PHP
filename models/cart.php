@@ -30,26 +30,27 @@ class cart {
         $this->product = $product;
     }
 
-    public static function AddCart($id, $cart) {
+    public static function AddCart($id, $cart, $quantity) {
         $itemCart = new cart();
         $product = product::getDetailProduct($id);
     
         if ($product != null && isset($cart['itemCart'][$id])) {
             // Nếu sản phẩm đã tồn tại trong giỏ hàng, cập nhật thông tin của nó
             $itemCart = $cart['itemCart'][$id];
-            $itemCart->setQuantity($itemCart->getQuantity() + 1);
+            $itemCart->setQuantity($itemCart->getQuantity() + $quantity); // Cập nhật số lượng với giá trị mới
             $itemCart->setTotalPrice($itemCart->getQuantity() * $product->getPrice());
             $cart['itemCart'][$id] = $itemCart;
         } else {
             // Nếu sản phẩm chưa có trong giỏ hàng, thêm vào
             $itemCart->setProduct($product);
-            $itemCart->setQuantity(1);
-            $itemCart->setTotalPrice($product->getPrice());
+            $itemCart->setQuantity($quantity); // Số lượng được truyền vào từ tham số
+            $itemCart->setTotalPrice($quantity * $product->getPrice()); // Tính tổng giá tiền
             $cart['itemCart'][$id] = $itemCart;
         }
     
         return $cart;
     }
+    
 
     public static function EditCart($id, $quantity, $cart) {
         if ($cart == null) {

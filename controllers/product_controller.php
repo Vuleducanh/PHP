@@ -6,38 +6,41 @@ require_once('models/style.php');
 
 class ProductController extends BaseController
 {
-  function __construct()
-  {
-    $this->folder = 'pages';
-  }
+    function __construct()
+    {
+        $this->folder = 'pages';
+    }
   
-  public function product()
-  {
-    $idProduct = isset($_GET['idProduct']) ? $_GET['idProduct'] : null;
-    $idStyle = isset($_GET['idStyle']) ? $_GET['idStyle'] : null;
+    public function product()
+    {
+        // Lấy ID sản phẩm và ID style từ biến $_GET, nếu không tồn tại thì gán giá trị mặc định là null
+        $idProduct = $_GET['idProduct'] ?? null;
+        $idStyle = $_GET['idStyle'] ?? null;
 
-    $detailProduct = product::getDetailProduct($idProduct); 
+        // Lấy chi tiết sản phẩm và các sản phẩm liên quan từ model
+        $detailProduct = product::getDetailProduct($idProduct); 
+        $relatedProduct = product::getRelatedProduct($idStyle);
+        
+        // Lấy danh sách các style từ model
+        $style = style::getStyleProduct(); 
 
-    $relatedProduct = product::getRelatedProduct($idStyle);
-    $dataRelatedProduct = array('relatedProduct' => $relatedProduct);
+        // Truyền dữ liệu cho view
+        $data = array(
+            'detailProduct' => $detailProduct,
+            'relatedProduct' => $relatedProduct,
+            'style' => $style
+        );
 
-    $style = style::getStyleProduct(); // Lấy danh sách các style  
-    $dataStyle = array('style' => $style);
-    
-    // Truyền dữ liệu cho view
-    $data = array(
-        'detailProduct' => $detailProduct,
-        'dataStyle' => $dataStyle ,
-        'dataRelatedProduct' => $dataRelatedProduct
-    );
+        // Render view
+        $this->render('product', $data, null); // Thay đổi tên view nếu cần
+    }
 
-    // Render view
-    $this->render('product', $data, null); // Thay đổi tên view
-  }
+    public function error()
+    {
+        // Truyền dữ liệu cho view (trong trường hợp này là null)
+        $data = null;
 
-  public function error()
-  {
-    $this->render('error', null , null);
-  }
-
+        // Render view
+        $this->render('error', $data, null);
+    }
 }

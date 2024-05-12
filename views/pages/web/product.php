@@ -45,14 +45,55 @@
                             </div>
                         </div>
                         <div id="quantity_product">
-                            <h3 id="quantity">Số lượng :1</h3> 
-                            <button class="up_quantity"><i class="fa-solid fa-chevron-up"></i></button>
-                            <button class="down_quantity"><i class="fa-solid fa-chevron-down"></i></button>
+                            <h3 id="quantity">Số lượng:</h3>
+                            <input type="number" id="quantity_input" min="1" value="1">
                         </div>
                         <div id="btn">
-                            <a href="http://localhost:8008/PHP/index.php?controller=cart&action=addCart&idProduct=<?php echo $detailProduct->getIdProduct();?>&idStyle=<?php echo $detailProduct->getIdStyle()?>"><button id="btn_add_cart">Thêm vào giỏ <i class="fa-solid fa-cart-shopping"></i></button></a>
+                            <button id="btn_add_cart">Thêm vào giỏ <i class="fa-solid fa-cart-shopping"></i></button>
                             <button id="btn_buy">Mua ngay</button>
                         </div>
+
+                        <script>
+                            document.getElementById("btn_add_cart").addEventListener("click", function(event) {
+    event.preventDefault();
+    var quantity = document.getElementById("quantity_input").value; // Lấy giá trị số lượng từ ô nhập liệu
+    var idProduct = "<?php echo $detailProduct->getIdProduct();?>";
+    var idStyle = "<?php echo $detailProduct->getIdStyle();?>";
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:8008/PHP/index.php?controller=cart&action=addCart&idProduct=" + idProduct + "&idStyle=" + idStyle + "&quantity=" + quantity, true);
+    xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            // Xử lý thành công khi thêm sản phẩm vào giỏ hàng
+            alert('Sản phẩm đã được thêm vào giỏ hàng!');
+        } else {
+            console.error('Request failed with status', xhr.status);
+        }
+    };
+    xhr.send();
+});
+
+                            document.getElementById("btn_buy").addEventListener("click", function(event) {
+                                event.preventDefault();
+                                var quantity = document.getElementById("quantity_input").value; // Lấy giá trị số lượng từ ô nhập liệu
+                                var idProduct = "<?php echo $detailProduct->getIdProduct();?>";
+                                var idStyle = "<?php echo $detailProduct->getIdStyle();?>";
+                                var xhr = new XMLHttpRequest();
+                                xhr.open("GET", "http://localhost:8008/PHP/index.php?controller=cart&action=addCart&idProduct=" + idProduct + "&idStyle=" + idStyle + "&quantity=" + quantity, true);
+                                xhr.onload = function () {
+                                    if (xhr.status >= 200 && xhr.status < 300) {
+                                        window.location.href = "http://localhost:8008/PHP/index.php?controller=cart&action=cart";
+                                    } else {
+                                        console.error('Request failed with status', xhr.status);
+                                    }
+                                };
+                                xhr.send();
+                            });
+                            </script>
+
+
+
+
+
                     </div>
                 </div>
    
